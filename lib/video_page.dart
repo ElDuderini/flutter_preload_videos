@@ -16,12 +16,10 @@ class VideoPage extends StatelessWidget {
             itemCount: state.urls.length,
             scrollDirection: Axis.vertical,
             onPageChanged: (index) =>
-                BlocProvider.of<PreloadBloc>(context, listen: false)
-                    .add(PreloadEvent.onVideoIndexChanged(index)),
+                BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.onVideoIndexChanged(index)),
             itemBuilder: (context, index) {
               // Is at end and isLoading
-              final bool _isLoading =
-                  (state.isLoading && index == state.urls.length - 1);
+              final bool _isLoading = (state.isLoading && index == state.urls.length - 1);
 
               return state.focusedIndex == index
                   ? VideoWidget(
@@ -51,12 +49,13 @@ class VideoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(child: VideoPlayer(controller)),
+        Center(child: AspectRatio(aspectRatio: controller.value.aspectRatio, child: VideoPlayer(controller))),
         AnimatedCrossFade(
           alignment: Alignment.bottomCenter,
           sizeCurve: Curves.decelerate,
-          duration: const Duration(milliseconds: 400),
+          duration: const Duration(milliseconds: 1000),
           firstChild: Padding(
             padding: const EdgeInsets.all(10.0),
             child: CupertinoActivityIndicator(
@@ -65,8 +64,7 @@ class VideoWidget extends StatelessWidget {
             ),
           ),
           secondChild: const SizedBox(),
-          crossFadeState:
-              isLoading ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+          crossFadeState: isLoading ? CrossFadeState.showFirst : CrossFadeState.showSecond,
         ),
       ],
     );

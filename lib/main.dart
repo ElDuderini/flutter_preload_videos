@@ -1,32 +1,34 @@
 import 'dart:isolate';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_preload_videos/core/constants.dart';
 import 'package:flutter_preload_videos/service/navigation_service.dart';
 import 'package:flutter_preload_videos/video_page.dart';
 import 'package:injectable/injectable.dart';
 
-import 'service/api_service.dart';
 import 'bloc/preload_bloc.dart';
 import 'core/build_context.dart';
 import 'injection.dart';
+import 'service/api_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod);
-  runApp(MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
+    runApp(MyApp());
+  });
 }
 
 /// Isolate to fetch videos in the background so that the video experience is not disturbed.
 /// Without isolate, the video will be paused whenever there is an API call
-/// because the main thread will be busy fetching new video URLs. 
+/// because the main thread will be busy fetching new video URLs.
 ///
 /// https://blog.codemagic.io/understanding-flutter-isolates/
 Future createIsolate(int index) async {
   // Set loading to true
-  BlocProvider.of<PreloadBloc>(context, listen: false)
-      .add(PreloadEvent.setLoading());
+  BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.setLoading());
 
   ReceivePort mainReceivePort = ReceivePort();
 
@@ -42,8 +44,7 @@ Future createIsolate(int index) async {
   final _urls = isolateResponse;
 
   // Update new urls
-  BlocProvider.of<PreloadBloc>(context, listen: false)
-      .add(PreloadEvent.updateUrls(_urls));
+  BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.updateUrls(_urls));
 }
 
 void getVideosTask(SendPort mySendPort) async {
@@ -57,8 +58,7 @@ void getVideosTask(SendPort mySendPort) async {
 
       final SendPort isolateResponseSendPort = message[1];
 
-      final List<String> _urls =
-          await ApiService.getVideos(id: index + kPreloadLimit);
+      final List<String> _urls = await ApiService.getVideos(id: index + kPreloadLimit);
 
       isolateResponseSendPort.send(_urls);
     }
