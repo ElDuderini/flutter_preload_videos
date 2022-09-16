@@ -18,51 +18,58 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PreloadEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getVideosFromApi,
+    required TResult Function() getChallengesFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(List<List<String>> challenges) updateChallenges,
     required TResult Function(int index) onVideoIndexChanged,
+    required TResult Function(int index) onChallengeIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_GetChallengesFromApi value) getChallengesFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_UpdateChallenges value) updateChallenges,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+    required TResult Function(_OnChallengeIndexChanged value)
+        onChallengeIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -85,38 +92,38 @@ class _$PreloadEventCopyWithImpl<$Res> implements $PreloadEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_GetVideosFromApiCopyWith<$Res> {
-  factory _$$_GetVideosFromApiCopyWith(
-          _$_GetVideosFromApi value, $Res Function(_$_GetVideosFromApi) then) =
-      __$$_GetVideosFromApiCopyWithImpl<$Res>;
+abstract class _$$_GetChallengesFromApiCopyWith<$Res> {
+  factory _$$_GetChallengesFromApiCopyWith(_$_GetChallengesFromApi value,
+          $Res Function(_$_GetChallengesFromApi) then) =
+      __$$_GetChallengesFromApiCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetVideosFromApiCopyWithImpl<$Res>
+class __$$_GetChallengesFromApiCopyWithImpl<$Res>
     extends _$PreloadEventCopyWithImpl<$Res>
-    implements _$$_GetVideosFromApiCopyWith<$Res> {
-  __$$_GetVideosFromApiCopyWithImpl(
-      _$_GetVideosFromApi _value, $Res Function(_$_GetVideosFromApi) _then)
-      : super(_value, (v) => _then(v as _$_GetVideosFromApi));
+    implements _$$_GetChallengesFromApiCopyWith<$Res> {
+  __$$_GetChallengesFromApiCopyWithImpl(_$_GetChallengesFromApi _value,
+      $Res Function(_$_GetChallengesFromApi) _then)
+      : super(_value, (v) => _then(v as _$_GetChallengesFromApi));
 
   @override
-  _$_GetVideosFromApi get _value => super._value as _$_GetVideosFromApi;
+  _$_GetChallengesFromApi get _value => super._value as _$_GetChallengesFromApi;
 }
 
 /// @nodoc
 
-class _$_GetVideosFromApi implements _GetVideosFromApi {
-  const _$_GetVideosFromApi();
+class _$_GetChallengesFromApi implements _GetChallengesFromApi {
+  const _$_GetChallengesFromApi();
 
   @override
   String toString() {
-    return 'PreloadEvent.getVideosFromApi()';
+    return 'PreloadEvent.getChallengesFromApi()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetVideosFromApi);
+        (other.runtimeType == runtimeType && other is _$_GetChallengesFromApi);
   }
 
   @override
@@ -125,36 +132,39 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getVideosFromApi,
+    required TResult Function() getChallengesFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(List<List<String>> challenges) updateChallenges,
     required TResult Function(int index) onVideoIndexChanged,
+    required TResult Function(int index) onChallengeIndexChanged,
   }) {
-    return getVideosFromApi();
+    return getChallengesFromApi();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
   }) {
-    return getVideosFromApi?.call();
+    return getChallengesFromApi?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
-    if (getVideosFromApi != null) {
-      return getVideosFromApi();
+    if (getChallengesFromApi != null) {
+      return getChallengesFromApi();
     }
     return orElse();
   }
@@ -162,43 +172,47 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_GetChallengesFromApi value) getChallengesFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_UpdateChallenges value) updateChallenges,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+    required TResult Function(_OnChallengeIndexChanged value)
+        onChallengeIndexChanged,
   }) {
-    return getVideosFromApi(this);
+    return getChallengesFromApi(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
   }) {
-    return getVideosFromApi?.call(this);
+    return getChallengesFromApi?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
-    if (getVideosFromApi != null) {
-      return getVideosFromApi(this);
+    if (getChallengesFromApi != null) {
+      return getChallengesFromApi(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetVideosFromApi implements PreloadEvent {
-  const factory _GetVideosFromApi() = _$_GetVideosFromApi;
+abstract class _GetChallengesFromApi implements PreloadEvent {
+  const factory _GetChallengesFromApi() = _$_GetChallengesFromApi;
 }
 
 /// @nodoc
@@ -241,10 +255,11 @@ class _$_SetLoading implements _SetLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getVideosFromApi,
+    required TResult Function() getChallengesFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(List<List<String>> challenges) updateChallenges,
     required TResult Function(int index) onVideoIndexChanged,
+    required TResult Function(int index) onChallengeIndexChanged,
   }) {
     return setLoading();
   }
@@ -252,10 +267,11 @@ class _$_SetLoading implements _SetLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
   }) {
     return setLoading?.call();
   }
@@ -263,10 +279,11 @@ class _$_SetLoading implements _SetLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
     if (setLoading != null) {
@@ -278,10 +295,12 @@ class _$_SetLoading implements _SetLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_GetChallengesFromApi value) getChallengesFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_UpdateChallenges value) updateChallenges,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+    required TResult Function(_OnChallengeIndexChanged value)
+        onChallengeIndexChanged,
   }) {
     return setLoading(this);
   }
@@ -289,10 +308,11 @@ class _$_SetLoading implements _SetLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
   }) {
     return setLoading?.call(this);
   }
@@ -300,10 +320,11 @@ class _$_SetLoading implements _SetLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
     if (setLoading != null) {
@@ -318,103 +339,109 @@ abstract class _SetLoading implements PreloadEvent {
 }
 
 /// @nodoc
-abstract class _$$_UpdateUrlsCopyWith<$Res> {
-  factory _$$_UpdateUrlsCopyWith(
-          _$_UpdateUrls value, $Res Function(_$_UpdateUrls) then) =
-      __$$_UpdateUrlsCopyWithImpl<$Res>;
-  $Res call({List<String> urls});
+abstract class _$$_UpdateChallengesCopyWith<$Res> {
+  factory _$$_UpdateChallengesCopyWith(
+          _$_UpdateChallenges value, $Res Function(_$_UpdateChallenges) then) =
+      __$$_UpdateChallengesCopyWithImpl<$Res>;
+  $Res call({List<List<String>> challenges});
 }
 
 /// @nodoc
-class __$$_UpdateUrlsCopyWithImpl<$Res> extends _$PreloadEventCopyWithImpl<$Res>
-    implements _$$_UpdateUrlsCopyWith<$Res> {
-  __$$_UpdateUrlsCopyWithImpl(
-      _$_UpdateUrls _value, $Res Function(_$_UpdateUrls) _then)
-      : super(_value, (v) => _then(v as _$_UpdateUrls));
+class __$$_UpdateChallengesCopyWithImpl<$Res>
+    extends _$PreloadEventCopyWithImpl<$Res>
+    implements _$$_UpdateChallengesCopyWith<$Res> {
+  __$$_UpdateChallengesCopyWithImpl(
+      _$_UpdateChallenges _value, $Res Function(_$_UpdateChallenges) _then)
+      : super(_value, (v) => _then(v as _$_UpdateChallenges));
 
   @override
-  _$_UpdateUrls get _value => super._value as _$_UpdateUrls;
+  _$_UpdateChallenges get _value => super._value as _$_UpdateChallenges;
 
   @override
   $Res call({
-    Object? urls = freezed,
+    Object? challenges = freezed,
   }) {
-    return _then(_$_UpdateUrls(
-      urls == freezed
-          ? _value._urls
-          : urls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+    return _then(_$_UpdateChallenges(
+      challenges == freezed
+          ? _value._challenges
+          : challenges // ignore: cast_nullable_to_non_nullable
+              as List<List<String>>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_UpdateUrls implements _UpdateUrls {
-  const _$_UpdateUrls(final List<String> urls) : _urls = urls;
+class _$_UpdateChallenges implements _UpdateChallenges {
+  const _$_UpdateChallenges(final List<List<String>> challenges)
+      : _challenges = challenges;
 
-  final List<String> _urls;
+  final List<List<String>> _challenges;
   @override
-  List<String> get urls {
+  List<List<String>> get challenges {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_urls);
+    return EqualUnmodifiableListView(_challenges);
   }
 
   @override
   String toString() {
-    return 'PreloadEvent.updateUrls(urls: $urls)';
+    return 'PreloadEvent.updateChallenges(challenges: $challenges)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateUrls &&
-            const DeepCollectionEquality().equals(other._urls, _urls));
+            other is _$_UpdateChallenges &&
+            const DeepCollectionEquality()
+                .equals(other._challenges, _challenges));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_urls));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_challenges));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UpdateUrlsCopyWith<_$_UpdateUrls> get copyWith =>
-      __$$_UpdateUrlsCopyWithImpl<_$_UpdateUrls>(this, _$identity);
+  _$$_UpdateChallengesCopyWith<_$_UpdateChallenges> get copyWith =>
+      __$$_UpdateChallengesCopyWithImpl<_$_UpdateChallenges>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getVideosFromApi,
+    required TResult Function() getChallengesFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(List<List<String>> challenges) updateChallenges,
     required TResult Function(int index) onVideoIndexChanged,
+    required TResult Function(int index) onChallengeIndexChanged,
   }) {
-    return updateUrls(urls);
+    return updateChallenges(challenges);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
   }) {
-    return updateUrls?.call(urls);
+    return updateChallenges?.call(challenges);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
-    if (updateUrls != null) {
-      return updateUrls(urls);
+    if (updateChallenges != null) {
+      return updateChallenges(challenges);
     }
     return orElse();
   }
@@ -422,47 +449,52 @@ class _$_UpdateUrls implements _UpdateUrls {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_GetChallengesFromApi value) getChallengesFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_UpdateChallenges value) updateChallenges,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+    required TResult Function(_OnChallengeIndexChanged value)
+        onChallengeIndexChanged,
   }) {
-    return updateUrls(this);
+    return updateChallenges(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
   }) {
-    return updateUrls?.call(this);
+    return updateChallenges?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
-    if (updateUrls != null) {
-      return updateUrls(this);
+    if (updateChallenges != null) {
+      return updateChallenges(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateUrls implements PreloadEvent {
-  const factory _UpdateUrls(final List<String> urls) = _$_UpdateUrls;
+abstract class _UpdateChallenges implements PreloadEvent {
+  const factory _UpdateChallenges(final List<List<String>> challenges) =
+      _$_UpdateChallenges;
 
-  List<String> get urls => throw _privateConstructorUsedError;
+  List<List<String>> get challenges;
   @JsonKey(ignore: true)
-  _$$_UpdateUrlsCopyWith<_$_UpdateUrls> get copyWith =>
+  _$$_UpdateChallengesCopyWith<_$_UpdateChallenges> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -532,10 +564,11 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getVideosFromApi,
+    required TResult Function() getChallengesFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(List<List<String>> challenges) updateChallenges,
     required TResult Function(int index) onVideoIndexChanged,
+    required TResult Function(int index) onChallengeIndexChanged,
   }) {
     return onVideoIndexChanged(index);
   }
@@ -543,10 +576,11 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
   }) {
     return onVideoIndexChanged?.call(index);
   }
@@ -554,10 +588,11 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getVideosFromApi,
+    TResult Function()? getChallengesFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
     TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
     if (onVideoIndexChanged != null) {
@@ -569,10 +604,12 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_GetChallengesFromApi value) getChallengesFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_UpdateChallenges value) updateChallenges,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+    required TResult Function(_OnChallengeIndexChanged value)
+        onChallengeIndexChanged,
   }) {
     return onVideoIndexChanged(this);
   }
@@ -580,10 +617,11 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
   }) {
     return onVideoIndexChanged?.call(this);
   }
@@ -591,10 +629,11 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
     required TResult orElse(),
   }) {
     if (onVideoIndexChanged != null) {
@@ -607,20 +646,178 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
 abstract class _OnVideoIndexChanged implements PreloadEvent {
   const factory _OnVideoIndexChanged(final int index) = _$_OnVideoIndexChanged;
 
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @JsonKey(ignore: true)
   _$$_OnVideoIndexChangedCopyWith<_$_OnVideoIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+abstract class _$$_OnChallengeIndexChangedCopyWith<$Res> {
+  factory _$$_OnChallengeIndexChangedCopyWith(_$_OnChallengeIndexChanged value,
+          $Res Function(_$_OnChallengeIndexChanged) then) =
+      __$$_OnChallengeIndexChangedCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$_OnChallengeIndexChangedCopyWithImpl<$Res>
+    extends _$PreloadEventCopyWithImpl<$Res>
+    implements _$$_OnChallengeIndexChangedCopyWith<$Res> {
+  __$$_OnChallengeIndexChangedCopyWithImpl(_$_OnChallengeIndexChanged _value,
+      $Res Function(_$_OnChallengeIndexChanged) _then)
+      : super(_value, (v) => _then(v as _$_OnChallengeIndexChanged));
+
+  @override
+  _$_OnChallengeIndexChanged get _value =>
+      super._value as _$_OnChallengeIndexChanged;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_$_OnChallengeIndexChanged(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_OnChallengeIndexChanged implements _OnChallengeIndexChanged {
+  const _$_OnChallengeIndexChanged(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'PreloadEvent.onChallengeIndexChanged(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_OnChallengeIndexChanged &&
+            const DeepCollectionEquality().equals(other.index, index));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_OnChallengeIndexChangedCopyWith<_$_OnChallengeIndexChanged>
+      get copyWith =>
+          __$$_OnChallengeIndexChangedCopyWithImpl<_$_OnChallengeIndexChanged>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getChallengesFromApi,
+    required TResult Function() setLoading,
+    required TResult Function(List<List<String>> challenges) updateChallenges,
+    required TResult Function(int index) onVideoIndexChanged,
+    required TResult Function(int index) onChallengeIndexChanged,
+  }) {
+    return onChallengeIndexChanged(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getChallengesFromApi,
+    TResult Function()? setLoading,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
+    TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
+  }) {
+    return onChallengeIndexChanged?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getChallengesFromApi,
+    TResult Function()? setLoading,
+    TResult Function(List<List<String>> challenges)? updateChallenges,
+    TResult Function(int index)? onVideoIndexChanged,
+    TResult Function(int index)? onChallengeIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (onChallengeIndexChanged != null) {
+      return onChallengeIndexChanged(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetChallengesFromApi value) getChallengesFromApi,
+    required TResult Function(_SetLoading value) setLoading,
+    required TResult Function(_UpdateChallenges value) updateChallenges,
+    required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+    required TResult Function(_OnChallengeIndexChanged value)
+        onChallengeIndexChanged,
+  }) {
+    return onChallengeIndexChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
+  }) {
+    return onChallengeIndexChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetChallengesFromApi value)? getChallengesFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_UpdateChallenges value)? updateChallenges,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    TResult Function(_OnChallengeIndexChanged value)? onChallengeIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (onChallengeIndexChanged != null) {
+      return onChallengeIndexChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnChallengeIndexChanged implements PreloadEvent {
+  const factory _OnChallengeIndexChanged(final int index) =
+      _$_OnChallengeIndexChanged;
+
+  int get index;
+  @JsonKey(ignore: true)
+  _$$_OnChallengeIndexChangedCopyWith<_$_OnChallengeIndexChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PreloadState {
-  List<String> get urls => throw _privateConstructorUsedError;
-  Map<int, VideoPlayerController> get controllers =>
+  List<List<String>> get challenges => throw _privateConstructorUsedError;
+  Map<int, Map<int, VideoPlayerController>> get controllers =>
       throw _privateConstructorUsedError;
   int get focusedIndex => throw _privateConstructorUsedError;
   int get reloadCounter => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  int get currentChallengeIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PreloadStateCopyWith<PreloadState> get copyWith =>
@@ -633,11 +830,12 @@ abstract class $PreloadStateCopyWith<$Res> {
           PreloadState value, $Res Function(PreloadState) then) =
       _$PreloadStateCopyWithImpl<$Res>;
   $Res call(
-      {List<String> urls,
-      Map<int, VideoPlayerController> controllers,
+      {List<List<String>> challenges,
+      Map<int, Map<int, VideoPlayerController>> controllers,
       int focusedIndex,
       int reloadCounter,
-      bool isLoading});
+      bool isLoading,
+      int currentChallengeIndex});
 }
 
 /// @nodoc
@@ -650,21 +848,22 @@ class _$PreloadStateCopyWithImpl<$Res> implements $PreloadStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? urls = freezed,
+    Object? challenges = freezed,
     Object? controllers = freezed,
     Object? focusedIndex = freezed,
     Object? reloadCounter = freezed,
     Object? isLoading = freezed,
+    Object? currentChallengeIndex = freezed,
   }) {
     return _then(_value.copyWith(
-      urls: urls == freezed
-          ? _value.urls
-          : urls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      challenges: challenges == freezed
+          ? _value.challenges
+          : challenges // ignore: cast_nullable_to_non_nullable
+              as List<List<String>>,
       controllers: controllers == freezed
           ? _value.controllers
           : controllers // ignore: cast_nullable_to_non_nullable
-              as Map<int, VideoPlayerController>,
+              as Map<int, Map<int, VideoPlayerController>>,
       focusedIndex: focusedIndex == freezed
           ? _value.focusedIndex
           : focusedIndex // ignore: cast_nullable_to_non_nullable
@@ -677,6 +876,10 @@ class _$PreloadStateCopyWithImpl<$Res> implements $PreloadStateCopyWith<$Res> {
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentChallengeIndex: currentChallengeIndex == freezed
+          ? _value.currentChallengeIndex
+          : currentChallengeIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -689,11 +892,12 @@ abstract class _$$_PreloadStateCopyWith<$Res>
       __$$_PreloadStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<String> urls,
-      Map<int, VideoPlayerController> controllers,
+      {List<List<String>> challenges,
+      Map<int, Map<int, VideoPlayerController>> controllers,
       int focusedIndex,
       int reloadCounter,
-      bool isLoading});
+      bool isLoading,
+      int currentChallengeIndex});
 }
 
 /// @nodoc
@@ -709,21 +913,22 @@ class __$$_PreloadStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? urls = freezed,
+    Object? challenges = freezed,
     Object? controllers = freezed,
     Object? focusedIndex = freezed,
     Object? reloadCounter = freezed,
     Object? isLoading = freezed,
+    Object? currentChallengeIndex = freezed,
   }) {
     return _then(_$_PreloadState(
-      urls: urls == freezed
-          ? _value.urls
-          : urls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      challenges: challenges == freezed
+          ? _value.challenges
+          : challenges // ignore: cast_nullable_to_non_nullable
+              as List<List<String>>,
       controllers: controllers == freezed
           ? _value.controllers
           : controllers // ignore: cast_nullable_to_non_nullable
-              as Map<int, VideoPlayerController>,
+              as Map<int, Map<int, VideoPlayerController>>,
       focusedIndex: focusedIndex == freezed
           ? _value.focusedIndex
           : focusedIndex // ignore: cast_nullable_to_non_nullable
@@ -736,6 +941,10 @@ class __$$_PreloadStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentChallengeIndex: currentChallengeIndex == freezed
+          ? _value.currentChallengeIndex
+          : currentChallengeIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -744,26 +953,29 @@ class __$$_PreloadStateCopyWithImpl<$Res>
 
 class _$_PreloadState implements _PreloadState {
   _$_PreloadState(
-      {required this.urls,
+      {required this.challenges,
       required this.controllers,
       required this.focusedIndex,
       required this.reloadCounter,
-      required this.isLoading});
+      required this.isLoading,
+      required this.currentChallengeIndex});
 
   @override
-  final List<String> urls;
+  final List<List<String>> challenges;
   @override
-  final Map<int, VideoPlayerController> controllers;
+  final Map<int, Map<int, VideoPlayerController>> controllers;
   @override
   final int focusedIndex;
   @override
   final int reloadCounter;
   @override
   final bool isLoading;
+  @override
+  final int currentChallengeIndex;
 
   @override
   String toString() {
-    return 'PreloadState(urls: $urls, controllers: $controllers, focusedIndex: $focusedIndex, reloadCounter: $reloadCounter, isLoading: $isLoading)';
+    return 'PreloadState(challenges: $challenges, controllers: $controllers, focusedIndex: $focusedIndex, reloadCounter: $reloadCounter, isLoading: $isLoading, currentChallengeIndex: $currentChallengeIndex)';
   }
 
   @override
@@ -771,24 +983,28 @@ class _$_PreloadState implements _PreloadState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PreloadState &&
-            const DeepCollectionEquality().equals(other.urls, urls) &&
+            const DeepCollectionEquality()
+                .equals(other.challenges, challenges) &&
             const DeepCollectionEquality()
                 .equals(other.controllers, controllers) &&
             const DeepCollectionEquality()
                 .equals(other.focusedIndex, focusedIndex) &&
             const DeepCollectionEquality()
                 .equals(other.reloadCounter, reloadCounter) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading));
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.currentChallengeIndex, currentChallengeIndex));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(urls),
+      const DeepCollectionEquality().hash(challenges),
       const DeepCollectionEquality().hash(controllers),
       const DeepCollectionEquality().hash(focusedIndex),
       const DeepCollectionEquality().hash(reloadCounter),
-      const DeepCollectionEquality().hash(isLoading));
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(currentChallengeIndex));
 
   @JsonKey(ignore: true)
   @override
@@ -798,23 +1014,25 @@ class _$_PreloadState implements _PreloadState {
 
 abstract class _PreloadState implements PreloadState {
   factory _PreloadState(
-      {required final List<String> urls,
-      required final Map<int, VideoPlayerController> controllers,
+      {required final List<List<String>> challenges,
+      required final Map<int, Map<int, VideoPlayerController>> controllers,
       required final int focusedIndex,
       required final int reloadCounter,
-      required final bool isLoading}) = _$_PreloadState;
+      required final bool isLoading,
+      required final int currentChallengeIndex}) = _$_PreloadState;
 
   @override
-  List<String> get urls => throw _privateConstructorUsedError;
+  List<List<String>> get challenges;
   @override
-  Map<int, VideoPlayerController> get controllers =>
-      throw _privateConstructorUsedError;
+  Map<int, Map<int, VideoPlayerController>> get controllers;
   @override
-  int get focusedIndex => throw _privateConstructorUsedError;
+  int get focusedIndex;
   @override
-  int get reloadCounter => throw _privateConstructorUsedError;
+  int get reloadCounter;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
+  @override
+  int get currentChallengeIndex;
   @override
   @JsonKey(ignore: true)
   _$$_PreloadStateCopyWith<_$_PreloadState> get copyWith =>

@@ -44,19 +44,50 @@ class ApiService {
     'https://assets.mixkit.co/videos/preview/mixkit-young-woman-waking-up-in-the-morning-42896-large.mp4'
   ];
 
-  /// Simulate api call
-  static Future<List<String>> getVideos({int id = 0}) async {
-    // No more videos
-    if ((id >= _videos.length)) {
+  static const _videos2 = [
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.jpg",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+    "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
+  ];
+
+  static final List<List<String>> _challenges = [_videos, _videos2, _videos, _videos2, _videos];
+
+  static Future<List<List<String>>> getChallenges({int id = 0}) async {
+// No more videos
+    if ((id >= _challenges.length)) {
       return [];
     }
 
     await Future.delayed(const Duration(seconds: kLatency));
 
-    if ((id + kNextLimit >= _videos.length)) {
-      return _videos.sublist(id, _videos.length);
+    if ((id + kNextLimit >= _challenges.length)) {
+      return _challenges.sublist(id, _challenges.length);
     }
 
-    return _videos.sublist(id, id + kNextLimit);
+    return _challenges.sublist(id, id + kNextLimit);
   }
+
+  /// Simulate api call
+  // static Future<List<String>> getVideos(int challengeVideos, {int id = 0}) async {
+  //   // No more videos
+  //   if ((id >= _challenges[challengeVideos].length)) {
+  //     return [];
+  //   }
+
+  //   await Future.delayed(const Duration(seconds: kLatency));
+
+  //   if ((id + kNextLimit >= _challenges[challengeVideos].length)) {
+  //     return _challenges[challengeVideos].sublist(id, _challenges[challengeVideos].length);
+  //   }
+
+  //   return _challenges[challengeVideos].sublist(id, id + kNextLimit);
+  // }
 }

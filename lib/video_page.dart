@@ -13,22 +13,30 @@ class VideoPage extends StatelessWidget {
       child: BlocBuilder<PreloadBloc, PreloadState>(
         builder: (context, state) {
           return PageView.builder(
-            itemCount: state.urls.length,
-            scrollDirection: Axis.vertical,
-            onPageChanged: (index) =>
-                BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.onVideoIndexChanged(index)),
-            itemBuilder: (context, index) {
-              // Is at end and isLoading
-              final bool _isLoading = (state.isLoading && index == state.urls.length - 1);
+              itemCount: state.challenges.length,
+              scrollDirection: Axis.horizontal,
+              onPageChanged: (index) =>
+                  BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.onChallengeIndexChanged(index)),
+              itemBuilder: ((context, index) {
+                return PageView.builder(
+                  itemCount: state.challenges[state.currentChallengeIndex].length,
+                  scrollDirection: Axis.vertical,
+                  onPageChanged: (index) =>
+                      BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.onVideoIndexChanged(index)),
+                  itemBuilder: (context, index) {
+                    // Is at end and isLoading
+                    final bool _isLoading =
+                        (state.isLoading && index == state.challenges[state.currentChallengeIndex].length - 1);
 
-              return state.focusedIndex == index
-                  ? VideoWidget(
-                      isLoading: _isLoading,
-                      controller: state.controllers[index]!,
-                    )
-                  : const SizedBox();
-            },
-          );
+                    return state.focusedIndex == index
+                        ? VideoWidget(
+                            isLoading: _isLoading,
+                            controller: state.controllers[state.currentChallengeIndex]![index]!,
+                          )
+                        : const SizedBox();
+                  },
+                );
+              }));
         },
       ),
     );

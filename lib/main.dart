@@ -32,7 +32,9 @@ Future createIsolate(int index) async {
 
   ReceivePort mainReceivePort = ReceivePort();
 
-  Isolate.spawn<SendPort>(getVideosTask, mainReceivePort.sendPort);
+  // Isolate.spawn<SendPort>(getVideosTask, mainReceivePort.sendPort);
+
+  Isolate.spawn<SendPort>(getChallengesTask, mainReceivePort.sendPort);
 
   SendPort isolateSendPort = await mainReceivePort.first;
 
@@ -41,13 +43,31 @@ Future createIsolate(int index) async {
   isolateSendPort.send([index, isolateResponseReceivePort.sendPort]);
 
   final isolateResponse = await isolateResponseReceivePort.first;
-  final _urls = isolateResponse;
+  final _challenges = isolateResponse;
 
   // Update new urls
-  BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.updateUrls(_urls));
+  BlocProvider.of<PreloadBloc>(context, listen: false).add(PreloadEvent.updateChallenges(_challenges));
 }
 
-void getVideosTask(SendPort mySendPort) async {
+// void getVideosTask(List<String> challenge, SendPort mySendPort) async {
+//   ReceivePort isolateReceivePort = ReceivePort();
+
+//   mySendPort.send(isolateReceivePort.sendPort);
+
+//   await for (var message in isolateReceivePort) {
+//     if (message is List) {
+//       final int index = message[0];
+
+//       final SendPort isolateResponseSendPort = message[1];
+
+//       final List<String> _urls = await ApiService.getVideos(challenge, id: index + kPreloadLimit);
+
+//       isolateResponseSendPort.send(_urls);
+//     }
+//   }
+// }
+
+void getChallengesTask(SendPort mySendPort) async {
   ReceivePort isolateReceivePort = ReceivePort();
 
   mySendPort.send(isolateReceivePort.sendPort);
@@ -58,9 +78,9 @@ void getVideosTask(SendPort mySendPort) async {
 
       final SendPort isolateResponseSendPort = message[1];
 
-      final List<String> _urls = await ApiService.getVideos(id: index + kPreloadLimit);
+      final List<List<String>> _challenges = await ApiService.getChallenges(id: index + kPreloadLimit);
 
-      isolateResponseSendPort.send(_urls);
+      isolateResponseSendPort.send(_challenges);
     }
   }
 }
@@ -71,7 +91,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<PreloadBloc>()..add(PreloadEvent.getVideosFromApi()),
+      create: (_) => getIt<PreloadBloc>()..add(PreloadEvent.getChallengesFromApi()),
       child: MaterialApp(
         key: _navigationService.navigationKey,
         debugShowCheckedModeBanner: false,
