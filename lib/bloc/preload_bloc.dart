@@ -16,16 +16,17 @@ part 'preload_state.dart';
 @injectable
 @prod
 class PreloadBloc extends Bloc<PreloadEvent, PreloadState> {
-  PreloadBloc() : super(PreloadState.initial()) {
-    on<PreloadEvent>(_onPreload);
-  }
+  PreloadBloc() : super(PreloadState.initial());
 
-  _onPreload(PreloadEvent event, Emitter<PreloadState> emit) async {
-    event.map(
-      setLoading: (e) async {
-        emit(state.copyWith(isLoading: true));
+  @override
+  Stream<PreloadState> mapEventToState(
+    PreloadEvent event,
+  ) async* {
+    yield* event.map(
+      setLoading: (e) async* {
+        yield state.copyWith(isLoading: true);
       },
-      getChallengesFromApi: (e) async {
+      getChallengesFromApi: (e) async* {
         /// Fetch first 5 videos from api
         final List<List<String>> _challenges = await ApiService.getChallenges();
         state.challenges.addAll(_challenges);
@@ -46,9 +47,9 @@ class PreloadBloc extends Bloc<PreloadEvent, PreloadState> {
         /// Initialize 3rd video in new challenge
         await _initializeControllerAtIndex(1, 0);
 
-        emit(state.copyWith(reloadCounter: state.reloadCounter + 1));
+        yield state.copyWith(reloadCounter: state.reloadCounter + 1);
       },
-      onVideoIndexChanged: (e) async {
+      onVideoIndexChanged: (e) async* {
         /// Condition to fetch new videos
         final bool shouldFetch = (e.index + kPreloadLimit) % kNextLimit == 0 &&
             state.challenges[state.currentChallengeIndex].length == e.index + kPreloadLimit;
@@ -64,9 +65,9 @@ class PreloadBloc extends Bloc<PreloadEvent, PreloadState> {
           _playPreviousVideo(state.currentChallengeIndex, e.index);
         }
 
-        emit(state.copyWith(focusedIndex: e.index));
+        yield state.copyWith(focusedIndex: e.index);
       },
-      onChallengeIndexChanged: (e) async {
+      onChallengeIndexChanged: (e) async* {
         /// Condition to fetch new videos
         final bool shouldFetch =
             (e.index + kPreloadLimit) % kNextLimit == 0 && state.challenges.length == e.index + kPreloadLimit;
@@ -82,16 +83,16 @@ class PreloadBloc extends Bloc<PreloadEvent, PreloadState> {
           _playPreviousChallenge(e.index, state.focusedIndex);
         }
 
-        emit(state.copyWith(currentChallengeIndex: e.index, focusedIndex: 0));
+        yield state.copyWith(currentChallengeIndex: e.index, focusedIndex: 0);
       },
-      updateChallenges: (e) async {
+      updateChallenges: (e) async* {
         /// Add new urls to current challenge
         state.challenges.addAll(e.challenges);
 
         _initializeChallengeAtIndex(state.currentChallengeIndex + 1);
         _initializeControllerAtIndex(state.currentChallengeIndex + 1, 0);
 
-        emit(state.copyWith(reloadCounter: state.reloadCounter + 1, isLoading: false));
+        yield state.copyWith(reloadCounter: state.reloadCounter + 1, isLoading: false);
         log('🚀🚀🚀 NEW VIDEOS ADDED');
       },
     );
